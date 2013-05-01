@@ -1,0 +1,81 @@
+a {font-size: 14px; /*font-weight: bold;*/ font-family: Verdana; color: #3158AF;}
+a:hover {text-decoration:underline; color: #3158AF;}
+
+table.table_menu a {font-family: Arial; font-size: 12px; color:#00418A;}
+table.table_menu a:hover {color:#00418A;}
+
+td.rightcolumn {border-left:0 none; padding-left:5px; padding-right:0px;}
+
+td.newsroom_2cols p.bodytext, td.newsroom_2cols p, div#c58674 table, div#c65088 table
+{font-family: verdana; font-size:13px; line-height:16px; padding-left:0px; padding-right:10px; text-align:justify;}
+
+td.newsroom_2cols h1.csc-firstHeader, td.newsroom_2cols h1 {border-bottom:4px solid #FBB329; color:#222222; font-family:Verdana; font-size:15px; font-weight:bold; margin-left:5px; padding:2px;} 
+
+td.newsroom_2cols h3 {font-family: verdana; font-size:13px; font-weight:bold; margin-bottom:3px;padding-top:10px;}
+
+#box_blue_2cols div.red_home {background-color:#EBDBDC;}
+
+#box_blue_2cols div.red_home h1.csc-firstHeader {font-weight:bold; font-family:Verdana; font-size:12px; border-top:5px solid #B94344; color:#333333; margin:0px; padding-left: 9px; padding-bottom: 5px;}
+
+#box_blue_2cols div.red_home p.bodytext {font-family: verdana; font-size: 11px; color:#000000; line-height:15px; margin:5px; padding:6px 9px 9px 6px; text-align:justify;}
+
+
+#box_blue_2cols div.yellow_home {background-color:#F5F5F5; margin-top: 15px;}
+
+#box_blue_2cols div.yellow_home h1 {font-weight:bold; font-family:Verdana; font-size:12px; border-top:5px solid #FBB329; color:#333333; margin:0px; padding-left: 9px; padding-bottom: 5px;}
+#box_blue_2cols div.yellow_home h1 a {font-weight:bold; font-family:Verdana; font-size:12px; color: #3158AF;} 
+
+#box_blue_2cols div.yellow_home p.bodytext {font-family: verdana; font-size: 11px; color:#000000; line-height:15px; margin:5px; padding:6px; text-align:justify;}
+
+
+#box_blue_2cols ul {list-style-image:none; list-style-position:outside; list-style-type:none; margin-right:0; margin-bottom:6px; padding-left:0;}
+
+table.table_menu_right td#box_blue_2cols ul li {font-family: verdana;  font-size: 11px;  list-style-type: none;  padding-left: 15px; background: transparent url(/fileadmin/templates/rust/img/arrow.png) no-repeat scroll left 4px !important; border-bottom: 1px dashed #bbb; }
+
+td.newsroom_2cols li a, #box_blue_2cols li a, td#text li a {
+    font-family: verdana;
+    font-size:11px;
+    font-weight: bold;
+    color: #3158AF;}
+
+.link_title{
+    font-size:16px;
+    font-weight:lighter;
+}
+
+
+td.newsroom_2cols ul li, td.newsroom_2cols ol li, td.newsroom ol li, td.newsroom ul li, td#text ul li {font-size:11px; line-height:17px; list-style-position:outside; font-family: Verdana;}
+
+td.newsroom_2cols li, td#text li {background:transparent url(/fileadmin/templates/rust/img/arrow.png) no-repeat scroll left 4px !important; font-size:12px; list-style-type:none; padding-left:15px;}
+
+td.search_box, div.search_box {background-color:#B8CEEE; border:1px solid #537EB4; color:#000000;font-weight:bold;}
+div.search_box {font-size: 11px; font-family: Verdana; width:600px;}
+div.search_box form {margin-bottom: 0px;}
+
+table.record_count {font-size: 11px; font-family: Verdana; padding-bottom: 10px;}
+td.new_search {padding-top:15px; padding-right: 10px;}
+td.new_search a.main_txt {background-color: #f7f7f7; border: 1px solid #cccccc; padding:3px;}
+
+td.alternate_A { background-color:#F0F0F0; border-top:1px solid #CCCCCC; padding:5px;  font-size: 11px; font-family: Verdana;}
+td.alternate_B { background-color:#FFFFFF; border-top:1px solid #CCCCCC; padding:5px;  font-size: 11px; font-family: Verdana;}
+
+td.alternate_A a.light, td.alternate_B a.light{ color:#3158AF; font-weight:bold; text-decoration:none; font-size: 11px; font-family: Verdana;}
+td.alternate_A a.light:hover, td.alternate_B a.light:hover {text-decoration:underline;}
+
+td.title_tables_menuright {border-top:5px solid #FBB329; font-weight:bold; padding:3px 2px 2px 9px; text-align:left;}
+td.title_tables_menuright h2 a {font-size: 13px; font-family: Verdana; color:#3158AF;}
+
+div#c59279 {margin-top:20px;}
+
+div#c59279 ul {padding-left: 10px; padding-right: 10px;}
+div#c59279 ul li{margin-bottom: 25px;}
+
+div#c56256 li {font-weight: normal; margin-bottom:10px;}
+
+div#c60105 {margin-left: 20px; margin-bottom: 25px;}
+
+table.cb_detail td#tablebg {background:#C9D8EE none repeat scroll 0 0; border:1px solid #92ABD0; color:#000000; font-family:Verdana,Arial,Helvetica; font-size:11px; font-weight:bold; padding:5px; text-align:left;}
+table.cb_detail td#text {background-color:#FFFFFF; border:1px solid #EBEBEB; color:black; font-family:Verdana,Arial,Helvetica; font-size:11px; padding:5px; line-height: 17px;}
+table.cb_detail td#text td {font-size:11px; color: #666666;}
+
+input.submit_button {border: 1px solid #cccccc; background-color: #ffffff; font-family: Tahoma; font-weight: bold; font-size: 11px; color: #333333;}
