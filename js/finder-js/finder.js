@@ -181,8 +181,8 @@ providerName['aglrnb']='Natural Bridge';
 providerName['aglrfaocapacityportal']='FAO Capacity';
 
 providerName['aglfaoimark']='iMark';
-providerName['aglrfaoerptoolkit']='ERP_1';
-providerName['aglrfaoerptoolkitprimsec']='ERP_2';
+providerName['aglrfaoerptoolkit']='ERP toolkit';
+providerName['aglrfaoerptoolkitprimsec']='ERP toolkit';
 providerName['aglrfaorightofood']='Right To Food';
 
 
