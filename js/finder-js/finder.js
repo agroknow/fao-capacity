@@ -172,7 +172,7 @@ providerName['oemiksike']='MIKSIKE';
 providerName['aglrfaocdx']='FAO Codex';
 providerName['aglrfskn']='Food Safety Knowledge Network';
 providerName['aglrfoodsafety']='Food Safety OER';
-providerName['aglraims']='AIMS';
+providerName['aglraims']='Webinars @AIMS';
 providerName['aglrslowfood']='Slow Food';
 providerName['aglrllb']='Life Lab';
 providerName['aglrgsg']='Great School Gardens';
@@ -181,8 +181,8 @@ providerName['aglrnb']='Natural Bridge';
 providerName['aglrfaocapacityportal']='FAO Capacity';
 
 providerName['aglfaoimark']='iMark';
-providerName['aglrfaoerptoolkit']='ERP toolkit';
-providerName['aglrfaoerptoolkitprimsec']='ERP toolkit';
+providerName['aglrfaoerptoolkit']='ERP Tool Kit';
+providerName['aglrfaoerptoolkitprimsec']='ERP Tool Kit';
 providerName['aglrfaorightofood']='Right To Food';
 
 
