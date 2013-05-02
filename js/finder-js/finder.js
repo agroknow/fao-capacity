@@ -150,17 +150,11 @@ providerName['faocapacityportal']='FAO capacity portal';
 providerName['traglor']='Traglor';
 providerName['nsdlbeyond']='NSDL Beyond';
 providerName['edunhmc']='Educational National Europe';
-providerName['aglreol']='Encyclopedia of Life';
-providerName['aglrnb']='Natural Bridge';
 providerName['cgiar']='CGIAR';
 providerName['ruforum']='RuForum';
 providerName['gfar']='Global Forum on Agricultural Research';
-providerName['aglrgsg']='Great School Gardens';
 providerName['access']='Access Agricultural';
-providerName['aglrllb']='Life Lab';
 providerName['rurinc']='Rural Inclusion';
-providerName['aglraims']='AIMS';
-providerName['aglrslowfood']='Slow Food';
 providerName['oeagroasis']='AGROASIS/NOVA';
 providerName['oeenoat']='ENOAT';
 providerName['oebioagro']='BioAgro';
@@ -178,6 +172,19 @@ providerName['oemiksike']='MIKSIKE';
 providerName['aglrfaocdx']='FAO Codex';
 providerName['aglrfskn']='Food Safety Knowledge Network';
 providerName['aglrfoodsafety']='Food Safety OER';
+providerName['aglraims']='AIMS';
+providerName['aglrslowfood']='Slow Food';
+providerName['aglrllb']='Life Lab';
+providerName['aglrgsg']='Great School Gardens';
+providerName['aglreol']='Encyclopedia of Life';
+providerName['aglrnb']='Natural Bridge';
+providerName['aglrfaocapacityportal']='FAO Capacity';
+
+providerName['aglfaoimark']='iMark';
+providerName['aglrfaoerptoolkit']='ERP_1';
+providerName['aglrfaoerptoolkitprimsec']='ERP_2';
+providerName['aglrfaorightofood']='Right To Food';
+
 
 /*--end providers mapping*/
 

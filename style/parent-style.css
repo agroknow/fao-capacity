@@ -38,7 +38,13 @@ td.newsroom_2cols li a, #box_blue_2cols li a, td#text li a {
     font-weight: bold;
     color: #3158AF;}
 
-.link_title{
+.link_title_featured{
+    font-size:14px;
+    font-weight:lighter;
+}
+
+.link_title_latest{
+    padding-top: 30px;
     font-size:16px;
     font-weight:lighter;
 }

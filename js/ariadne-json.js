@@ -18,7 +18,7 @@ function getItemJSONP(urlTemp)
                 //alert("my_1 : " + arrayWithJSONS[0].languageBlocks.en.title);
                 
 //-------------
-                if(arrayWithJSONS[0].languageBlocks.length!==undefined && arrayWithJSONS[0].languageBlocks!==undefined )
+                if(arrayWithJSONS[0].languageBlocks!==undefined && arrayWithJSONS[0].languageBlocks.length!==undefined)
                 {
                 for(var i = 0; i<arrayWithJSONS[0].languageBlocks.length; i++)//run all different languages version of this item
                 {

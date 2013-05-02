@@ -576,12 +576,14 @@ nav #jMenu li ul li a:hover {
 
 #insert_summary /*indicator of result in left menu*/
 {
+    font-size: 14px;
     margin:0px 0px 0px 10px;
 }
 
 #search_status /*indicator of processing time in left menu*/
 {
     color:white;
+    font-size: 13px;
     margin:10px 0px 5px 10px;
 }
 
@@ -1318,6 +1320,7 @@ a.backbutton {
 	border-bottom:1px solid #ececec;
 	position:relative;
     width:750px;
+    
 }
 .item-content .iteminfo {
 	width:470px;
@@ -1678,7 +1681,7 @@ a.disabled {
     font-size:13px;
     border-left:1px solid #ccc;
     width:255px;
-    float:left;
+    float:right;
     
 }
 
@@ -1710,13 +1713,13 @@ a.disabled {
 {
     float:left;
     width:475px;
-    min-height: 200px;
+    min-height: 130px;
     font-size:13px;
 }
 
 .itemKeywords
 {
-    width:550px;
+    width:480px;
 }
 
 .itemKeywords li

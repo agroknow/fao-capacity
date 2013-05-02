@@ -1427,7 +1427,7 @@ margin: 130px 0px 0px 19px;
 		margin-bottom: 0;
 		margin-right: 5%;
 		margin-left: 0;
-		padding-left: 1.5em;
+		/*padding-left: 1.5em;*/
 		text-indent: 0em;
 	}
 	td.newsroom_2cols ul li, td.newsroom_2cols ol li, td.newsroom ol li, td.newsroom ul li  {
@@ -1523,6 +1523,7 @@ margin: 130px 0px 0px 19px;
 	table.contenttable p.bodytext {
 		padding: 5px;
 		margin-bottom: 0px;
+        text-align: center;
 	}
 	td.search {
 		 border-top: 4px solid #00418A;
