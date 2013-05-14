@@ -569,7 +569,7 @@ nav #jMenu li ul li a:hover {
 
 #search_terms /*indicator of result in left menu */
 {
-    color:white;
+    /*color:white;*/
 }
 
 #insert_summary /*indicator of result in left menu*/
@@ -580,7 +580,7 @@ nav #jMenu li ul li a:hover {
 
 #search_status /*indicator of processing time in left menu*/
 {
-    color:white;
+    /*color:white;*/
     font-size: 13px;
     margin:10px 0px 5px 10px;
 }
@@ -869,7 +869,7 @@ body.innerpage #main {
     max-height: 215px;
 }
 .filter_child a {
-    color:white;
+    color:#004871;
     background:url(images/unchecked.png) 3px center no-repeat;
 	padding:7px 13px 7px 20px;
 	position:relative;
