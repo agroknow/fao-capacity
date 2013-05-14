@@ -169,7 +169,6 @@ header#mainheader {
 .logo {
 	display:block;
 	width:100%;
-	height:90px;
 	background:url(images/clean-header.png) center center no-repeat;
 	text-indent:-9999px;
     margin:auto;
@@ -227,7 +226,6 @@ header#mainheader {
     background-repeat:no-repeat;
     background-position: center center;
     padding:0px;
-    height:80px;
 }
 .main_search_block {
 	position:relative;
