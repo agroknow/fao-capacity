@@ -232,9 +232,9 @@ header#mainheader {
 }
 .moduletable_mainsearch
 {
-    /*padding-top:10px;*/
+    /*padding-top:10px;
     margin:0px 0px 0px 130px;
-    float:left;
+    float:left;*/
 }
 
 .center-search
@@ -575,14 +575,15 @@ nav #jMenu li ul li a:hover {
 #insert_summary /*indicator of result in left menu*/
 {
     font-size: 14px;
-    margin:0px 0px 0px 10px;
+    padding:0px 0px 0px 10px;
+    background-color:white;
 }
 
 #search_status /*indicator of processing time in left menu*/
 {
-    /*color:white;*/
+    background-color:white;
     font-size: 13px;
-    margin:10px 0px 5px 10px;
+    padding:10px 0px 5px 10px;
 }
 
 .left_details /*details of the above items (results & processing time)*/
@@ -798,8 +799,8 @@ body.innerpage #main {
 /* FILTER */
 
 .filter {
-	width:160px;
-	background:background: #E9EEF4;
+	width:220px;
+	background: #f1f1f1;
     margin-bottom:30px;
 
 	-webkit-border-radius:0 0 4px 4px;
@@ -832,15 +833,14 @@ body.innerpage #main {
 .filter_parent
 {
 	line-height:25px;
-    color:#004871;
-    background: #ffffff; /*url(images/parent_closed.png);*/
-    border-bottom: 4px solid #c2d1e1 ;
+    color:#336699;
+    background: none; /*url(images/parent_closed.png);*/
+    border-bottom: 4px solid #ffcc33;
 }
 
 .filter_parent:hover
 {
     text-decoration:none;
-    color:#a03a67;
 }
 
 .filter_parent.opened:hover
@@ -850,7 +850,7 @@ body.innerpage #main {
 
 .filter_parent.opened
 {
-    color:#a03a67;
+    color:#336699;
     background-color:none;
 }
 
@@ -888,7 +888,7 @@ body.innerpage #main {
     /*font-size:14px;*/
     text-decoration:none;
     color:#a03a67;
-    background: url(images/checked.png) 3px center no-repeat;
+    background: url(images/checked.png) white 3px center no-repeat;
 }
 
 .filter_child span {
@@ -1007,7 +1007,7 @@ body.innerpage #main {
 
 .listing {
 	margin-top:15px;
-    width:770px;
+    /*width:770px;*/
     padding-left:5px;
     padding-bottom:50px;
     
