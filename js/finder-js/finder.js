@@ -213,7 +213,7 @@ function initializeFinder(){
 	if (!FINDER_INITIALIZED) {
 		if(typeof customizeFinder == 'function') {
 			var customParams = customizeFinder();
-            var urlSelectedProviders = getUrlVars()["providers"];
+           var urlSelectedProviders = getUrlVars()["providers"];
 			if(customParams) {
                 /*limit collection|providers*/
                 if(urlSelectedProviders){
@@ -454,7 +454,8 @@ function parseQueryString(initUpdate){
     var spq = $F('query').split('keyword:');
     //var spq = $F('context').split('context:');
     var plainText = spq[0];
-    var clauses = [];
+    
+    var clauses = []; //{"language": "anyOf", "expression": "collection:*"}
     
     var selectedProviders;
     
@@ -487,14 +488,17 @@ function parseQueryString(initUpdate){
             context = context.replace("#","").replace("%20", " ");
             clauses.push({language:'anyOf',expression:'context:' + context});
         }
+        
         if (urlSelectedProviders){
             urlSelectedProviders = urlSelectedProviders.replace("#","").replace("%20", " ");
             clauses.push({language:'anyOf',expression:'provider:'+urlSelectedProviders});
         }
-        
+
         if (!urlSelectedProviders && selectedProviders){
             clauses.push({language:'anyOf',expression:'provider:'+selectedProviders});
-        }        //clauses.push({language:'anyOf',expression:'keyword:' + key});
+        }
+        
+        //clauses.push({language:'anyOf',expression:'keyword:' + key});
         //clauses.push({language:'anyOf',expression:'lrt:image'});
         // add the below to code @ github. It is to limit the results only for OE collection //
         
@@ -598,7 +602,8 @@ new Ajax.JSONRequest(SERVICE_URL, {
  },
  onSuccess: function(transport)
                      {
-                    
+                  
+     // alert(JSON.stringify(request));
                      
  var result = transport.responseText.evalJSON(true).result;
  
@@ -606,7 +611,7 @@ new Ajax.JSONRequest(SERVICE_URL, {
                    
 
  
- //alert(JSON.stringify(result));
+
  // document.getElementById("jsonResponse").innerHTML="Response: <br/><h3>"+JSON.stringify(result)+"</h3>";
  
  $('search_results').update('');
@@ -634,73 +639,89 @@ new Ajax.JSONRequest(SERVICE_URL, {
  result.metadata.each(function(item,index){
                       oddCtr++;
                       
-                      if (item.format.indexOf('pdf') != -1)
-                      item.format='images/icons/pdf.png';
-                      else if (item.format.indexOf('powerpoint') != -1)
-                      item.format='images/icons/ppt.png';
-                      else if (item.format.indexOf('video') != -1)
-                      item.format='images/icons/video.png';
-                      else if (item.format.indexOf('zip') != -1)
-                      item.format='images/icons/zip.png';
-                      else if (item.format.indexOf('audio') != -1)
-                      item.format='images/icons/audio.png';
-                      else if ((item.format.indexOf('text') != -1) ||(item.format.indexOf('multipart') != -1) )
-                      item.format='images/icons/url.png';
-                      //item.format='http://open.thumbshots.org/image.aspx?url='+'item.location';
-                      else if ((item.format.indexOf('xml') != -1 || item.format.indexOf('XML') != -1) )
-                      item.format='images/icons/xml.png';
-                      else if (item.format.indexOf('image') != -1)
-                      item.format='images/icons/image.png';
-                      else if ((item.format.indexOf('word')!= -1) || (item.format.indexOf('wordprocessingml')!= -1))
-                      item.format='images/icons/word.png';
-                      else if ((item.format.indexOf('application')!= -1))
-                      item.format='images/icons/application.png';
-                      else if ((item.format == ''))
-                      item.format='images/icons/application.png';
-                      else
-                      item.format='images/icons/url.png';
-
-                      ///example of mdPath : home/workflow/repository/LOM/DIGITALGREEN/1455.xml
+                   //   alert(JSON.stringify(item));
                       
-                      var spliter1 = item.mdPath.split("/");
-                      
-                      var spliter2 = spliter1[spliter1.length-1].split(".");
-                      item.identifier = spliter2[0];
+//                      if(item.format!=undefined)
+//                      {
+//                      if (item.format.indexOf('pdf') != -1)
+//                      item.format='images/icons/pdf.png';
+//                      else if (item.format.indexOf('powerpoint') != -1)
+//                      item.format='images/icons/ppt.png';
+//                      else if (item.format.indexOf('video') != -1)
+//                      item.format='images/icons/video.png';
+//                      else if (item.format.indexOf('zip') != -1)
+//                      item.format='images/icons/zip.png';
+//                      else if (item.format.indexOf('audio') != -1)
+//                      item.format='images/icons/audio.png';
+//                      else if ((item.format.indexOf('text') != -1) ||(item.format.indexOf('multipart') != -1) )
+//                      item.format='images/icons/url.png';
+//                      //item.format='http://open.thumbshots.org/image.aspx?url='+'item.location';
+//                      else if ((item.format.indexOf('xml') != -1 || item.format.indexOf('XML') != -1) )
+//                      item.format='images/icons/xml.png';
+//                      else if (item.format.indexOf('image') != -1)
+//                      item.format='images/icons/image.png';
+//                      else if ((item.format.indexOf('word')!= -1) || (item.format.indexOf('wordprocessingml')!= -1))
+//                      item.format='images/icons/word.png';
+//                      else if ((item.format.indexOf('application')!= -1))
+//                      item.format='images/icons/application.png';
+//                      else if ((item.format == ''))
+//                      item.format='images/icons/application.png';
+//                      else
+//                      item.format='images/icons/url.png';
+//                      
+//                      }
+//                      else{
+                      item.format='images/icons/url.png';
+//                      }
 
+                                        
+                     
                       
                       item.isOdd = oddCtr;
                       
-                      
-                      if(item.keywords == undefined || item.keywords == '')
+                      //KEYWORDS
+                      var thisKeywords="";//English IF exists, else the first choice
+                      if(item.keywords == undefined)
                       $('search_results').insert(Jaml.render('resultwithoutkeywords', item)); //changed resultWITHOUTkeywords to result
                       else {
-                      try {item.keywords = item.keywords.split(",");} catch(e){}
-                      
-                      var spt = item.title.split(",",1);
-                      item.title = spt[0];
-                      var length = spt[0].length;
-                      
-                      if (item.title[0] == '[')
-                      item.title = item.title.substring(1,length);
-                      else
-                      item.title = item.title.substring(0,length);
-                      
-                      //spt = item.description.split(",",1);
-                      //item.description=spt[0];
-                      //length = spt[0].length;
-                      length=END_DESCRIPTION;
-                      
-                      if (item.description[0] == '[')
-                      item.description = item.description.substring(1,length);
-                      else
-                      item.description =item.description.substring(0,length);
-                      
-                      if (item.description.indexOf(']') != -1)
-                      {
-                      spt = item.description.split("]");
-                      item.description=spt[0];
+                      try {
+                      thisKeywords=item.keywords[0].value;
+                      for(i=0;i<item.keywords.length;i++){
+                      if(item.keywords[i].lang=='en'){
+                      thisKeywords = item.keywords[i].value;
+                      }
                       }
 
+                      item.keywords = thisKeywords.split(",");
+                      } catch(e){}
+                      
+                      
+                      //TITLE
+                      var thisTitle="";//English IF exists, else the first choice
+                      if(item.title.length!=0)
+                      {
+                      thisTitle=item.title[0].value;//first choice in case 'en' is undefined
+                            for(i=0;i<item.title.length;i++){
+                                if(item.title[i].lang=='en'){
+                                    thisTitle = item.title[i].value;
+                                }
+                            }
+                      }
+                      item.title = thisTitle;
+                      
+                      //DESCRIPTION
+                      var thisDesc="";//English IF exists, else the first choice
+                      if(item.descriptions.length!=undefined)
+                      {
+                      thisDesc=item.descriptions[0].value;//first choice in case 'en' is undefined
+                      for(i=0;i<item.descriptions.length;i++){
+                      if(item.descriptions[i].lang=='en'){
+                      thisDesc = item.descriptions[i].value;
+                      }
+                      }
+                      }
+                      item.descriptions = thisDesc;
+                      
                       
                       
                       
@@ -972,12 +993,12 @@ new Ajax.JSONRequest(SERVICE_URL, {
                        header(
                               h2(img({src:data.format}),
                                  a({href:data.location,title: data.title, target: '_blank'},data.title)),
-                              section(p({cls:'item-intro-desc'}, data.description),
+                              section(p({cls:'item-intro-desc'}, data.descriptions),
                                       aside({cls:'clearfix'},
                                             div({cls:'floatleft'},
     div({cls:'line keywords'}, span("Keywords:"), keywordsToEmbed /*item.keywords*/)),
                                             div({cls:'floatright'},
-    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier, cls:'moreinfo'}, "More Info")))))))});
+    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier.identifier_0, cls:'moreinfo'}, "More Info")))))))});
                  
                      
 
@@ -1007,10 +1028,10 @@ new Ajax.JSONRequest(SERVICE_URL, {
                                            header(
                                                   h2(img({src:data.format}),
                                                      a({href:data.location,title: data.title, target: '_blank'},data.title)),
-                                                  section(p({cls:'item-intro-desc'}, data.description),
+                                                  section(p({cls:'item-intro-desc'}, data.descriptions),
                                                           aside({cls:'clearfix'},
                                                                 div({cls:'floatright'},
-                                                                    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier, cls:'moreinfo'}, "More Info")))))))});
+                                                                    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier.identifier_0, cls:'moreinfo'}, "More Info")))))))});
                      
  
  
