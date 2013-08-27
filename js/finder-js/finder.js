@@ -643,7 +643,7 @@ new Ajax.JSONRequest(SERVICE_URL, {
  result.metadata.each(function(item,index){
                       oddCtr++;
                       
-                      alert(JSON.stringify(item));
+                      //alert(JSON.stringify(item));
                       
 //                      if(item.format!=undefined)
 //                      {
