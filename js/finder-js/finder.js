@@ -643,7 +643,7 @@ new Ajax.JSONRequest(SERVICE_URL, {
  result.metadata.each(function(item,index){
                       oddCtr++;
                       
-                   //   alert(JSON.stringify(item));
+                      alert(JSON.stringify(item));
                       
 //                      if(item.format!=undefined)
 //                      {
@@ -993,6 +993,7 @@ new Ajax.JSONRequest(SERVICE_URL, {
                }
                }
                
+               
                article({class:'item-intro '+odd},
                        header(
                               h2(img({src:data.format}),
@@ -1002,7 +1003,7 @@ new Ajax.JSONRequest(SERVICE_URL, {
                                             div({cls:'floatleft'},
     div({cls:'line keywords'}, span("Keywords:"), keywordsToEmbed /*item.keywords*/)),
                                             div({cls:'floatright'},
-    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier.identifier_0, cls:'moreinfo'}, "More Info")))))))});
+    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier[0], cls:'moreinfo'}, "More Info")))))))});
                  
                      
 
@@ -1035,7 +1036,7 @@ new Ajax.JSONRequest(SERVICE_URL, {
                                                   section(p({cls:'item-intro-desc'}, data.descriptions),
                                                           aside({cls:'clearfix'},
                                                                 div({cls:'floatright'},
-                                                                    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier.identifier_0, cls:'moreinfo'}, "More Info")))))))});
+                                                                    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier[0], cls:'moreinfo'}, "More Info")))))))});
                      
  
  
