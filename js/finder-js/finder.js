@@ -678,8 +678,6 @@ new Ajax.JSONRequest(SERVICE_URL, {
                       item.format='images/icons/url.png';
 //                      }
 
-                                        
-                     
                       
                       item.isOdd = oddCtr;
                       
@@ -993,6 +991,10 @@ new Ajax.JSONRequest(SERVICE_URL, {
                }
                }
                
+               	
+				var mdPath = data.mdPath[0].split('/');
+				var id = mdPath[mdPath.length-1].split('.')[0];
+               //console.log(id); 
                
                article({class:'item-intro '+odd},
                        header(
@@ -1003,40 +1005,45 @@ new Ajax.JSONRequest(SERVICE_URL, {
                                             div({cls:'floatleft'},
     div({cls:'line keywords'}, span("Keywords:"), keywordsToEmbed /*item.keywords*/)),
                                             div({cls:'floatright'},
-    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier[0], cls:'moreinfo'}, "More Info")))))))});
+    div({cls:'line alignright'}, a({href:"item.html?id="+id, cls:'moreinfo'}, "More Info")))))))});
                  
                      
 
     Jaml.register('resultwithoutkeywords', function(data){
                                    
-                                   //               odd++;
-                                   //               var backgroundClass = ""
-                                   //               if(odd%2===0){backgroundClass = "odd";}
-                                   var keywordsToEmbed = "";
+	               //               odd++;
+	               //               var backgroundClass = ""
+	               //               if(odd%2===0){backgroundClass = "odd";}
+	               var keywordsToEmbed = "";
 
                   var odd = "";
                   if(data.isOdd%2===1){odd="odd"}
                                    
-                                   for(var i=0 , length=data.keywords.length; i<length;i++)
-                                   {
-                                   if(i!==length-1)
-                                   {
-                                   keywordsToEmbed +="<a class=\"secondary\" href=\"listing.html?query="+data.keywords[i]+"\">&nbsp"+data.keywords[i]+"</a>"
-                                   }
-                                   else
-                                   {
-                                   keywordsToEmbed +="<a class=\"secondary last\" href=\"listing.html?query="+data.keywords[i].split(" ")[0]+"\">&nbsp"+data.keywords[i]+"</a>"
-                                   }
-                                   }
+	               for(var i=0 , length=data.keywords.length; i<length;i++)
+	               {
+	               if(i!==length-1)
+	               {
+	               keywordsToEmbed +="<a class=\"secondary\" href=\"listing.html?query="+data.keywords[i]+"\">&nbsp"+data.keywords[i]+"</a>"
+	               }
+	               else
+	               {
+	               keywordsToEmbed +="<a class=\"secondary last\" href=\"listing.html?query="+data.keywords[i].split(" ")[0]+"\">&nbsp"+data.keywords[i]+"</a>"
+	               }
+	               }
                                    
-                                   article({class:'item-intro ' +odd },
-                                           header(
-                                                  h2(img({src:data.format}),
-                                                     a({href:data.location,title: data.title, target: '_blank'},data.title)),
-                                                  section(p({cls:'item-intro-desc'}, data.descriptions),
-                                                          aside({cls:'clearfix'},
-                                                                div({cls:'floatright'},
-                                                                    div({cls:'line alignright'}, a({href:"item.html?id="+data.identifier[0], cls:'moreinfo'}, "More Info")))))))});
+              
+			 var mdPath = data.mdPath[0].split("/");
+			 var id = mdPath[mdPath.length-1].split('.')[0];
+			 /*console.log(id);*/
+                                   
+               article({class:'item-intro ' +odd },
+                       header(
+                              h2(img({src:data.format}),
+                                 a({href:data.location,title: data.title, target: '_blank'},data.title)),
+                              section(p({cls:'item-intro-desc'}, data.descriptions),
+                                      aside({cls:'clearfix'},
+                                            div({cls:'floatright'},
+                                                div({cls:'line alignright'}, a({href:"item.html?id="+id, cls:'moreinfo'}, "More Info")))))))});
                      
  
  
