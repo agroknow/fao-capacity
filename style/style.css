@@ -86,10 +86,13 @@ body:before {
 /*SEARCH*/
 
 
-/* FOOTER 
+
+/* FOOTER */
 footer#mainfooter
 {
-	background:#263433 url(images/bg_footer.jpg) 0 0 repeat-x;
+	background: url(images/footer_back.png) 0 0 repeat;
+	height:120px;
+	border-top:1px solid rgba(0,0,0,0.2);
 }
 
 footer#mainfooter p
@@ -97,39 +100,27 @@ footer#mainfooter p
     padding:5px;
 	font-size:12px;
 }
-*/
 
-
-/* CREDITS */
-nav.credits {
-	height:111px;
+nav.credits{
+	padding-top:20px;
+	background-color: white;
+	margin-left:50px;
 }
-nav.credits {
-	text-align:center;
-}
-nav.credits a {
-	display:inline-block;
-	height:65px;
-	padding:0 60px;
-	margin-top:20px;
-	font-size:13px;
-	color:#6a2810;
-    /*font-weight : bold;*/
-}
-nav.credits a:hover {
-    color:#fff;
-}
-nav.credits a.naturalEurope
-{
-	background:url(images/naturalEurope.png) 50% 100% no-repeat;
-}
-nav.credits a.curated {
-	background:url(images/combo.png) 50% 133% no-repeat;
-}
-nav.credits a.redpanda {
-	background:url(images/redpanda_logo.png) 50% 113% no-repeat;
+nav.credits div{
+	float:left;
+	margin-right:80px;
+	text-align: center;
+	background-color: white;
 }
 
+nav.credits div a{
+	float:left;
+	margin:0px 10px 0px 10px;
+}
+
+
+
+/* /FOOTER */
 
 
 /* HEADER */
@@ -1248,12 +1239,14 @@ ul.pagination li a.next {
 .icons_nav nav a.rec2 { background:url(images/fao_erp.png) center top no-repeat; padding-top:80px;}
 .icons_nav nav a.rec3 { background:url(images/right_to_food.png) center top no-repeat; padding-top:100px;}
 .icons_nav nav a.rec4 { background:url(images/global_cover.png) center top no-repeat; padding-top:100px;}
+.icons_nav nav a.rec5 { background:url(images/imark_cover.png) center top no-repeat; padding-top:100px;}
 
 .icons_nav nav a.rec0:hover { background:url(images/easypol_h.jpg) center top no-repeat; }
 .icons_nav nav a.rec1:hover { background:url(images/fao_codex_h.png) center top no-repeat; }
 .icons_nav nav a.rec2:hover { background:url(images/fao_erp_h.png) center top no-repeat; }
 .icons_nav nav a.rec3:hover { background:url(images/right_to_food_h.png) center top no-repeat; }
 .icons_nav nav a.rec4:hover { background:url(images/global_cover_h.png) center top no-repeat; }
+.icons_nav nav a.rec5:hover { background:url(images/imark_cover_h.png) center top no-repeat; }
 
 
 /*.icons_nav nav a.s0-2 { background:url(images/codex-2-s0.png) center top no-repeat; }
