@@ -991,7 +991,7 @@ new Ajax.JSONRequest(SERVICE_URL, {
                }
                }
                
-               	
+               	/*get id from mdPath*/
 				var mdPath = data.mdPath[0].split('/');
 				var id = mdPath[mdPath.length-1].split('.')[0];
                //console.log(id); 
